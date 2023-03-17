@@ -1,0 +1,178 @@
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Registration Success</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container text-center">
+		<h3>You have signed up successfully!</h3>
+		<h4><a th:href="@{/login}">Click here to Login</a></h4>
+	</div>
+	
+</body>
+</html>-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global HTML</title>
+  <link rel="stylesheet" href="global.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  
+<style>
+    #box{
+        width: 700px;
+        height: 400px;
+        text-align: center;
+        padding-left: 150px;
+        margin-top: 50px;
+      
+    }
+    .nav{
+  height: 75px;
+  background-color: #FF740F;
+}
+.slogan{
+  margin-left: 20px;
+  margin-top: 15px;
+} 
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #f5f7f9, #f2f5f7);
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+/* .btn-primary {
+  color: white;
+  background-color: #FF740F;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+} */
+#login{
+  background-color: #f17f2c;
+}
+#google{
+  background-color: #f17f2c;
+}
+.who{
+  text-align: center;
+  padding-bottom: 40px;
+  padding-left: 10px;
+}
+.social{
+  position: absolute;
+  top: 95%;
+  left: 1%;
+  color: #FF995C;
+}
+a:link { text-decoration: black; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+      .box {
+        text-align: center;
+        padding: 40px 0;
+        
+      }
+        h1 {
+          color: #88B04B;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-weight: 900;
+          font-size: 40px;
+          margin-bottom: 10px;
+        }
+        p {
+          color: #404F5E;
+          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-size:20px;
+          margin: 0;
+        }
+      i {
+        color: #9ABC66;
+        font-size: 100px;
+        line-height: 200px;
+        margin-left:-15px;
+      }
+      .card {
+        background: white;
+        padding: 60px;
+        border-radius: 4px;
+        box-shadow: 0 2px 3px #C8D0D8;
+        display: inline-block;
+        margin: 0 auto;
+      }
+</style>
+
+<div class="nav">
+  <nav class="nav" style="background-color: #FF740F;">
+    <!-- <a class="nav-link active" aria-current="page" style="color: black;">Your Security Is Our Motto</a> -->
+    <h2 class="slogan">Your Security Is Our Motto</h2>
+  </nav>
+</div>
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="row">
+      <div class="bg-dark p-4">
+		  <a th:href="@{/users}"><h5  style="color: gray;">Home</h5></a>
+          <h5  style="color: gray;">About Us</h5>
+          <!-- <h5  style="color: gray;">Collapsed content</h5> -->
+             <form th:action="@{/logout}" method="post">
+			<button type="submit" class="btn btn-outline-primary">Log Out</button>
+	
+		</form>
+        </div>
+    </div>
+    </div>
+    <nav class="navbar navbar bg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+
+
+
+    
+    
+<div class="box">
+	      <div class="card">
+      <div >
+        <i class="checkmark">✓</i>
+      </div>
+        <h1>Success</h1> 
+        <p>We have successfully fulfilled your request<br/> The changes have been made accordingly</p><br>
+        <a th:href="@{/users}" class="btn btn-success">Go Home</a>
+      </div>
+    
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+
+</html>

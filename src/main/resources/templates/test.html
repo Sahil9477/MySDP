@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Camera App</title>
+    
+  </head>
+  <body bgcolor="whitesmoke">
+
+    <video id="camera" autoplay style="height: 300px; width: 300px;"></video><br>
+    <script>
+      // Select the video element
+      var camera = document.getElementById("camera");
+
+      // Get access to the camera
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function (stream) {
+            camera.srcObject = stream;
+          })
+          .catch(function (error) {
+            console.log("Something went wrong!");
+          });
+      }
+    </script>
+    
+    <canvas id="photo" style="height: 200px; width: 300px;"></canvas>
+    <br/>
+    <button id="capture">Take Picture</button>
+    
+    <script>
+      var capture = document.getElementById("capture");
+      var photo = document.getElementById("photo");
+      var context = photo.getContext("2d");
+    
+      capture.addEventListener("click", function() {
+        context.drawImage(camera, 0, 0, photo.width, photo.height);
+      });
+    </script>
+    <button id="save">Save Image</button>
+
+    <script>
+      var save = document.getElementById("save");
+      save.addEventListener("click", function() {
+        // Get the image data from the canvas
+        var dataURL = photo.toDataURL();
+    
+        // Create a link element
+        var link = document.createElement("a");
+        link.download = "image.png";
+        link.href = dataURL;
+    
+        // Trigger the download
+        link.click();
+      });
+      if (!('webkitSpeechRecognition' in window)) {
+  // The Web Speech API is not supported on this browser
+  // You can show an error message or use a different speech recognition library
+  console.log("Web Speech API is not supported on this browser");
+} else {
+  // The Web Speech API is supported, you can proceed with the implementation
+  var recognition = new SpeechRecognition();
+  // ...
+} 
+
+      
+    </script> 
+    
+<form action="mailto:chavdaajay129@gmail.com" method="post" enctype="text/plain">
+  <input type="hidden"  name="This is to state that a visitor is willing to visit your house and here are the detais of the visitor..">
+  Name:<br>
+  <input type="text" name="name"><br>
+  E-mail:<br>
+  <input type="text" name="mail"><br>
+  Reason:
+  <input type="text" name="Reason"><br>
+  Comment:<br>
+  <input type="text" name="comment" size="50"><br><br>
+  <input type="submit" value="Send">
+  <input type="reset" value="Reset">
+  </form>
+  
+  
+    <p>
+        For any queries you can text
+        us at the below number: 
+    </p>
+      
+    <a href="sms:+916353003258">
+      +91-635-3003-258
+    </a>
+    <br/>
+    <a href="sms:+91714899472">
+      +91-971-4899-472
+    </a>
+ 
+  </body>
+</html>

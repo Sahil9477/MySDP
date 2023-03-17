@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get Started</title>
+    <link rel="stylesheet" href="global.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+</head>
+
+<body >
+    <style>
+        .button {
+            display: inline-block;
+            background: #4285f4;
+            color: #fff;
+
+            text-transform: uppercase;
+            padding: 20px 30px;
+            border-radius: 5px;
+            box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            -webkit-transition: all ease-in-out 300ms;
+            transition: all ease-in-out 300ms;
+            
+           
+
+        }
+
+        .button:hover {
+            box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+            -webkit-transform: translate(0px, -10px) scale(1.2);
+            transform: translate(0px, -10px) scale(1.2);
+        }
+        .title{
+            text-align: center;
+            font-size: 85px;
+            margin-top: 50px;
+            font-family: 'Gambetta', serif;
+            color: palegoldenrod;
+            
+        }
+        body {
+        background-color: #fcd2b3;
+ 
+  
+}
+.nav{
+  height: 75px;
+  background-color: #FF740F;
+}
+.slogan{
+  margin-left: 20px;
+  margin-top: 15px;
+} 
+/* body {
+  background: #007bff;
+  background: linear-gradient(to right, #f5f7f9, #f2f5f7);
+} */
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+/* .btn-primary {
+  color: white;
+  background-color: #FF740F;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+} */
+#login{
+  background-color: #f17f2c;
+}
+#google{
+  background-color: #f17f2c;
+}
+.who{
+  text-align: center;
+  padding-bottom: 40px;
+  padding-left: 10px;
+}
+.social{
+  position: absolute;
+  top: 95%;
+  left: 1%;
+  color: #FF995C;
+}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 120px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  margin-bottom: 40.5rem;
+  color: rgb(154, 74, 13);
+  outline: none;
+  text-align:left;
+}
+
+h1:hover {
+  font-variation-settings: "wght" 582; 
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 150%;
+  text-align: center;
+  color: MintCream;
+  letter-spacing: .5px;
+}
+</style>
+    
+
+<script>
+  
+  
+
+  
+</script>
+
+
+<script>
+  $(document).ready(function() {
+    var textWidth = $("#myText").width(); // Get the width of the text
+    var marginLeft = textWidth; // Set the initial margin-left value
+    var currentIndex = 0; // Set the initial index
+    
+    function animateText() {
+      var newText = ["Get started in minutes .", "A modern solution towards Secure Housing", "Know who visits your house at what time "]; // Define the array of new texts
+      currentIndex = (currentIndex + 1) % newText.length; // Get the next index
+      
+      $("#myText").animate({ // Animate the text to move right
+        marginLeft: marginLeft
+      }, 2000, function() { // Callback function to replace the text and animate it to move left
+        $(this).text(newText[currentIndex]).css("marginLeft", -textWidth).animate({
+          marginLeft: 0
+        }, 2000, function() { // Callback function to repeat the animation
+          animateText();
+        });
+      });
+      
+      marginLeft = -$("#myText").width(); // Set the next margin-left value
+    }
+    
+    animateText(); // Start the animation
+  });
+</script>
+<style>
+  /* CSS for the text to be animated */
+  #myText {
+    font-size: 50px;
+
+    font-style:oblique;
+    font-family:cursive;
+    color:palegoldenrod;
+    opacity:1;
+    text-align: center;
+    margin-top: 50px;
+    white-space: nowrap;
+  }
+</style>
+ 
+    
+<div class="container" style="background-image: url('https://images.pexels.com/photos/12284076/pexels-photo-12284076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-repeat: no-repeat; background-size:cover;margin-top: 50px;border-radius: 5px;border: 5px solid #f99e5d;;">
+    <h1  style="padding-top: 100px;">PROTEGO</h1>
+  </div>
+    <p class="title"  id ="myWelcome" style="color: rgb(111, 78, 37); ">Welcome To PROTEGO</p>
+    
+    <p></p>
+    <br>
+    <br><br>
+    <a th:href="@{/who}">
+        <center><div class="button" id = "mybtn" style="background-color: #FF740F;">Get Started</div></center>
+    </a><br><br>
+    <center>
+    <div style="color: rgb(5, 0, 0); background-color: #f99e5d;">
+        <br>
+  
+    
+        <p style="color:rgb(4, 1, 0);">
+   <u>Our Mission:</u><br><br>
+    
+    
+    We intend to provide this Software that shall be helpful for the betterment
+     of the housing society’s security .<br><br>
+    
+    
+    With the increase in crime rate and Theft from Houses in daylight ,we aspire to bring a change to this current scenario.<br><br>
+    
+    
+    Our software shall be easy to use with the help of our user - friendly features<br>
+     we provide a secure environment storing the details of the visitors visiting the housing society.<br><br><br></p>
+    </center>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

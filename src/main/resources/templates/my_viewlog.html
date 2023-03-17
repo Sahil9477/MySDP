@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>View Pesonal Log</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.scss" type="text/css">
+	 
+		<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body >
+	  <style>
+        .button {
+            display: inline-block;
+            background: #4285f4;
+            color: #fff;
+            text-transform: uppercase;
+            padding: 20px 30px;
+            border-radius: 5px;
+            box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            -webkit-transition: all ease-in-out 300ms;
+            transition: all ease-in-out 300ms;
+            margin-left: 675px;
+            margin-top: 300px;
+        }
+
+        .button:hover {
+            box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+            -webkit-transform: translate(0px, -10px) scale(1.2);
+            transform: translate(0px, -10px) scale(1.2);
+        }
+        .title{
+            text-align: center;
+            font-size: 85px;
+            margin-top: 50px;
+        }
+ 
+.nav{
+  height: 75px;
+  background-color: #FF740F;
+}
+.slogan{
+  margin-left: 20px;
+  margin-top: 15px;
+} 
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #f5f7f9, #f2f5f7);
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+/* .btn-primary {
+  color: white;
+  background-color: #FF740F;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+} */
+#login{
+  background-color: #f17f2c;
+}
+#google{
+  background-color: #f17f2c;
+}
+.who{
+  text-align: center;
+  padding-bottom: 40px;
+  padding-left: 10px;
+}
+.social{
+  position: absolute;
+  top: 95%;
+  left: 1%;
+  color: #FF995C;
+}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+table {
+	border-collapse: separate;
+  border-spacing: 0 15px;
+ }
+ 
+tr{
+	
+	   background-color:  whitesmoke;
+	  
+}
+#frow{
+	background-color: white;
+}
+  
+ 
+
+
+</style>
+
+<div class="nav">
+    <nav class="nav" style="background-color: #FF740F;">
+        <!-- <a class="nav-link active" aria-current="page" style="color: black;">Your Security Is Our Motto</a> -->
+        <h2 class="slogan">Your Security Is Our Motto</h2>
+    </nav>
+</div>
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="row">
+      <div class="bg-dark p-4">
+		  <a th:href="@{/users}"><h5  style="color: gray;">Home</h5></a>
+          <h5  style="color: gray;">About Us</h5>
+          
+             <form th:action="@{/logout}" method="post">
+			<button type="submit" class="btn btn-outline-primary">Log Out</button>
+	
+		</form>
+        </div>
+    </div>
+    </div>
+    <nav class="navbar navbar bg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+
+    
+    
+   
+  
+	
+	
+	<section class="main-content">
+		<div class="container">
+			<center>
+				<h1>View Personal Log</h1>
+			</center>
+			<br>
+			<br>
+
+			<table class="table">
+				<thead>
+					<tr >
+					
+						<th>ID</th>
+						<th>House No</th>
+						<th>Name</th>
+						<th>Reason for Visit</th>
+						<th>To Visit</th>
+						<th>Visitor Number</th>
+						<th>Visiting Day</th>
+					<th>Visiting Month</th>
+					<th>Visiting Time</th>
+					<th>Visiting Year</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="visitor: ${myvisitor}" id="frow">
+						<td th:text="${visitor.id}">
+							ID
+						</td>
+						
+						<td th:text="${visitor.house_no}">
+							House No
+						</td>
+						<td th:text="${visitor.name}">
+							Name
+							
+						</td>
+						<td th:text="${visitor.reason_visit}">
+							Reason for Visit
+						</td>
+						<td th:text="${visitor.to_visit}">
+							To Visit
+						</td>
+						<td th:text="${visitor.visitor_phone}">
+							Visitor Number
+						</td>
+					<td th:text="${visitor.str_day}">
+							Visiting Day
+						</td>
+						
+						<td th:text="${visitor.str_month}">
+							Visiting Month
+						</td>
+						<td th:text="${visitor.str_time}">
+							Visiting Time
+						</td>
+						<td th:text="${visitor.str_year}">
+							Visiting Year
+						</td>
+						
+					</tr>
+					
+					
+					
+				</tbody>
+			</table>
+		</div>
+	</section>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+</html>
